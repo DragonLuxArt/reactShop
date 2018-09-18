@@ -1,3 +1,8 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
+
 ._Header {
   width: 95%;
   height: 120px;
@@ -15,6 +20,18 @@
 }
 ._Header .headerLogo img {
   max-width: 40%;
+}
+
+._Footer {
+  display: flex;
+  justify-content: center;
+}
+._Footer div {
+  border-top: solid 1px silver;
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  height: 70px;
 }
 
 /*# sourceMappingURL=output.css.map */

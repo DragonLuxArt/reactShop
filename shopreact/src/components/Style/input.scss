@@ -1,6 +1,10 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
 ._Header {
   width: 95%;
-  height: 120px; 
+  height: 120px;
   display: inline-flex;
   border-bottom: solid 1px silver;
   div {
@@ -15,6 +19,20 @@
   .headerLogo {
     img {
       max-width: 40%;
+    }
+  }
+}
+
+._Footer {
+  display: flex;
+  justify-content: center;
+  div {
+    border-top: solid 1px silver;
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    height: 70px;
+    p {
     }
   }
 }
