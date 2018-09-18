@@ -1,3 +1,20 @@
-
+._Header {
+  width: 95%;
+  height: 120px;
+  display: inline-flex;
+  border-bottom: solid 1px silver;
+}
+._Header div {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+._Header div p {
+  padding-left: 130px;
+  font-size: 1.5em;
+}
+._Header .headerLogo img {
+  max-width: 40%;
+}
 
 /*# sourceMappingURL=output.css.map */
