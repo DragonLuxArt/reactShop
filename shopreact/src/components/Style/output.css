@@ -34,4 +34,27 @@
   height: 70px;
 }
 
+._MainPage {
+  width: 100%;
+}
+._MainPage section ._Search ._searchInput {
+  display: flex;
+  justify-content: left;
+  margin: 50px 0 0 38px;
+  width: 550px;
+  padding: 15px;
+  font-size: 22px;
+}
+._MainPage section ._Search ._searchInput::placeholder {
+  font-size: 22px;
+}
+
+._ProductList {
+  text-align: left;
+}
+._ProductList div {
+  width: 700px;
+  display: flex;
+}
+
 /*# sourceMappingURL=output.css.map */

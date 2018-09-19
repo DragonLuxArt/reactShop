@@ -32,7 +32,32 @@
     bottom: 0;
     width: 95%;
     height: 70px;
-    p {
+  }
+}
+
+._MainPage{
+  width: 100%;
+  section{
+    ._Search{
+      ._searchInput{
+        display: flex;
+        justify-content: left;
+        margin: 50px 0 0 38px;
+        width: 550px;
+        padding: 15px;
+        font-size: 22px;
+      }
+      ._searchInput::placeholder{
+        font-size: 22px;
+      }
     }
+  }
+}
+
+._ProductList{
+  text-align: left;
+  div{
+    width: 700px;
+    display: flex;
   }
 }
