@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../Style/output.css";
+import { filter } from "lodash";
 
 const API = "http://private-1c19e-reactlesson.apiary-mock.com/products";
 
@@ -7,32 +8,62 @@ class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      textSearch: "",
       products: []
     };
   }
+
   componentDidMount() {
     fetch(API)
       .then(response => response.json())
       .then(data => this.setState({ products: data }));
   }
-  render() {
+
+  _funkcja = () => {
     const { products } = this.state;
-    //console.log(this.state)
+    return products.map(product => (
+      <div key={product.objectID}>
+        <img src={product.photo} />
+        <div>
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
+          <p>{product.price}</p>
+          <button disabled={!product.in_stock}>Dodaj do koszyka</button>
+        </div>
+      </div>
+    ));
+  };
+
+  render() {
     return (
       <div className="_MainPage">
         <section>
           <div className="_Search">
-            <input className="_searchInput" placeholder="Szukaj..." />
+            <input
+              className="_searchInput"
+              placeholder="Szukaj..."
+              // onChange={e => (textSearch, e.target.value)}
+            />
           </div>
         </section>
 
-        <section className="_productList">
-          {products.map(product => (
-            <div key={product.objectID}>
-              <h1>{product.name}</h1>
-              <img src={product.photo} />
+        <section className="_ProductList">{this._funkcja()}</section>
+
+        <section className="ProductCart">
+          <div className="CartPage">
+            <div className="CartTitle">
+              <h1>Twój koszyk</h1>
             </div>
-          ))}
+            <div className="CartProducts">
+              <h1>Zawartość</h1>
+            </div>
+            <div className="CartCaption">
+              <p>
+                Podsumowanie {}
+                zł
+              </p>
+            </div>
+          </div>
         </section>
       </div>
     );
