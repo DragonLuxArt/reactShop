@@ -23,7 +23,7 @@ class MainPage extends Component {
     this._getData();
   }
 
-  _funkcja = () => {
+  _productsRender = () => {
     const { products } = this.state;
     return products.map(product => (
       <div key={product.objectID}>
@@ -38,14 +38,13 @@ class MainPage extends Component {
     ));
   };
 
-  change = (key, value) => {
+  onChanges = (key, value) => {
     this.setState({ [key]: value });
-   console.log(this.state);
+    console.log(this.state);
   };
 
   filterProducts = (products, textSearch) => {
-    _.filter(products,)
-    console.log(this.state)
+    _.filter(products, p => _.includes(p.name, textSearch));
   };
 
   render() {
@@ -60,12 +59,12 @@ class MainPage extends Component {
               name="textSearch"
               value={textSearch}
               placeholder="Szukaj..."
-              onChange={e => this.change("textSearch", e.target.value)}
+              onChange={e => this.onChanges("textSearch", e.target.value)}
             />
           </div>
         </section>
 
-        <section className="_ProductList">{this._funkcja()}</section>
+        <section className="_ProductList">{this._productsRender()}</section>
 
         <section className="ProductCart">
           <div className="CartPage">
