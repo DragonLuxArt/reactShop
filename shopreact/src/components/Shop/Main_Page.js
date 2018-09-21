@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../Style/output.css";
-import { filter } from "lodash";
+import _ from "lodash";
 
 const API = "http://private-1c19e-reactlesson.apiary-mock.com/products";
 
@@ -13,10 +13,14 @@ class MainPage extends Component {
     };
   }
 
-  componentDidMount() {
+  _getData = () => {
     fetch(API)
       .then(response => response.json())
       .then(data => this.setState({ products: data }));
+  };
+
+  componentDidMount() {
+    this._getData();
   }
 
   _funkcja = () => {
@@ -34,15 +38,29 @@ class MainPage extends Component {
     ));
   };
 
+  change = (key, value) => {
+    this.setState({ [key]: value });
+   console.log(this.state);
+  };
+
+  filterProducts = (products, textSearch) => {
+    _.filter(products,)
+    console.log(this.state)
+  };
+
   render() {
+    const { textSearch } = this.state;
+    console.log(this.state);
     return (
       <div className="_MainPage">
         <section>
           <div className="_Search">
             <input
               className="_searchInput"
+              name="textSearch"
+              value={textSearch}
               placeholder="Szukaj..."
-              // onChange={e => (textSearch, e.target.value)}
+              onChange={e => this.change("textSearch", e.target.value)}
             />
           </div>
         </section>
