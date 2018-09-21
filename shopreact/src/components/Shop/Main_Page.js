@@ -40,7 +40,6 @@ class MainPage extends Component {
 
   onChanges = (key, value) => {
     this.setState({ [key]: value });
-    console.log(this.state);
   };
 
   filterProducts = (products, textSearch) => {
