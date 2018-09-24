@@ -13,7 +13,7 @@
 ._Header div {
   position: absolute;
   top: 20px;
-  left: 14%;
+  left: 17%;
 }
 ._Header div p {
   padding-left: 130px;
@@ -39,7 +39,7 @@
 }
 
 .searchSection {
-  margin-left: 18%;
+  margin-left: 18.2%;
 }
 .searchSection ._Search ._searchInput {
   display: flex;
@@ -61,7 +61,7 @@
 }
 ._ProductList div img {
   position: absolute;
-  left: 41%;
+  left: 42%;
   margin-top: 40px;
   max-width: 100%;
   height: auto;
