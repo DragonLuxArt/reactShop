@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../Style/output.css";
 import _ from "lodash";
-
 const API = "http://private-1c19e-reactlesson.apiary-mock.com/products";
 
 class MainPage extends Component {
@@ -46,9 +45,10 @@ class MainPage extends Component {
   _cartRender = () => {
     const { cart } = this.state;
     return cart.map(product => (
-      <div>
+      <div className="cartItem">
         <p>
-          {product.id} - {product.name} - {product.price} zł
+          <button onClick={() => this.deleteFromCart(product)}> x </button>
+          {product.id} - {product.name} - {product.price}zł
         </p>
       </div>
     ));
@@ -68,6 +68,19 @@ class MainPage extends Component {
     this.setState({
       cart: [...this.state.cart, cartItem]
     });
+  };
+
+  deleteFromCart = cartItem => {
+    const x = this.state.cart;
+    const y = this.state.cart.indexOf(cartItem);
+    x.splice(y, 1);
+    this.setState({
+      cart: x
+    });
+  };
+
+  sumCartItems = () => {
+     return _.sumBy(this.state.cart, e => e.price);
   };
 
   render() {
@@ -98,8 +111,7 @@ class MainPage extends Component {
             <div className="CartProducts">{this._cartRender()}</div>
             <div className="CartCaption">
               <p>
-                Podsumowanie {}
-                zł
+                Podsumowanie: {this.sumCartItems()} zł
               </p>
             </div>
           </div>
