@@ -1,10 +1,11 @@
 .App {
   text-align: center;
-  height: 100%;
+  min-height: 100%;
+  max-width: 80vw;
 }
 
 ._Header {
-  width: 95%;
+  width: 60%;
   height: 120px;
   display: inline-flex;
   border-bottom: solid 1px silver;
@@ -12,7 +13,7 @@
 ._Header div {
   position: absolute;
   top: 20px;
-  left: 10px;
+  left: 14%;
 }
 ._Header div p {
   padding-left: 130px;
@@ -28,33 +29,51 @@
 }
 ._Footer div {
   border-top: solid 1px silver;
-  position: absolute;
-  bottom: 0;
-  width: 95%;
+  width: 60%;
   height: 70px;
 }
 
 ._MainPage {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
-._MainPage section ._Search ._searchInput {
+
+section {
+  position: relative;
+  left: 18%;
+}
+section ._Search ._searchInput {
   display: flex;
-  justify-content: left;
   margin: 50px 0 0 38px;
   width: 550px;
   padding: 15px;
   font-size: 22px;
 }
-._MainPage section ._Search ._searchInput::placeholder {
+section ._Search ._searchInput::placeholder {
   font-size: 22px;
 }
 
 ._ProductList {
-  text-align: left;
+  position: absolute;
+  left: 5%;
 }
 ._ProductList div {
-  width: 700px;
-  display: flex;
+  max-width: 700px;
+  display: block;
+  justify-self: left;
+  margin-left: 10px;
+}
+._ProductList div img {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+}
+._ProductList div ._ItemsDesc {
+  display: block;
+}
+._ProductList div ._ItemsDesc h1 {
+  margin: 60px 0 0 20px;
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=output.css.map */

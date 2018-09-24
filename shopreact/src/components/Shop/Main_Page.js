@@ -9,7 +9,8 @@ class MainPage extends Component {
     super(props);
     this.state = {
       textSearch: "",
-      products: []
+      products: [],
+      cart: []
     };
   }
 
@@ -23,17 +24,32 @@ class MainPage extends Component {
     this._getData();
   }
 
-  _productsRender = () => {
-    const { products } = this.state;
-    return products.map(product => (
+  _productsRender = (products, textSearch) => {
+    return this.filterProducts(products, textSearch).map(product => (
       <div key={product.objectID}>
         <img src={product.photo} />
         <div>
           <h1>{product.name}</h1>
           <p>{product.description}</p>
-          <p>{product.price}</p>
-          <button disabled={!product.in_stock}>Dodaj do koszyka</button>
+          <p>{product.price} zł</p>
+          <button
+            onClick={() => this.addtoCart(product)}
+            disabled={!product.in_stock}
+          >
+            Dodaj do koszyka
+          </button>
         </div>
+      </div>
+    ));
+  };
+
+  _cartRender = () => {
+    const { cart } = this.state;
+    return cart.map(product => (
+      <div>
+        <p>
+          {product.id} - {product.name} - {product.price} zł
+        </p>
       </div>
     ));
   };
@@ -43,12 +59,19 @@ class MainPage extends Component {
   };
 
   filterProducts = (products, textSearch) => {
-    _.filter(products, p => _.includes(p.name, textSearch));
+    return _.filter(products, p =>
+      _.includes(p.name.toLowerCase(), textSearch.toLowerCase())
+    );
+  };
+
+  addtoCart = cartItem => {
+    this.setState({
+      cart: [...this.state.cart, cartItem]
+    });
   };
 
   render() {
-    const { textSearch } = this.state;
-    console.log(this.state);
+    const { products, textSearch } = this.state;
     return (
       <div className="_MainPage">
         <section>
@@ -63,16 +86,16 @@ class MainPage extends Component {
           </div>
         </section>
 
-        <section className="_ProductList">{this._productsRender()}</section>
+        <section className="_ProductList">
+          {this._productsRender(products, textSearch)}
+        </section>
 
         <section className="ProductCart">
           <div className="CartPage">
             <div className="CartTitle">
               <h1>Twój koszyk</h1>
             </div>
-            <div className="CartProducts">
-              <h1>Zawartość</h1>
-            </div>
+            <div className="CartProducts">{this._cartRender()}</div>
             <div className="CartCaption">
               <p>
                 Podsumowanie {}
