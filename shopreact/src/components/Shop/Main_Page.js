@@ -25,12 +25,12 @@ class MainPage extends Component {
 
   _productsRender = (products, textSearch) => {
     return this.filterProducts(products, textSearch).map(product => (
-      <div key={product.objectID}>
+      <div className="_ItemsDesc" key={product.objectID}>
         <img src={product.photo} />
         <div>
-          <h1>{product.name}</h1>
-          <p>{product.description}</p>
+          <h1 className="productsTitle">{product.name}</h1>
           <p>{product.price} zł</p>
+          <p>{product.description}</p>
           <button
             onClick={() => this.addtoCart(product)}
             disabled={!product.in_stock}
@@ -87,7 +87,7 @@ class MainPage extends Component {
     const { products, textSearch } = this.state;
     return (
       <div className="_MainPage">
-        <section>
+        <section className="searchSection">
           <div className="_Search">
             <input
               className="_searchInput"
