@@ -30,7 +30,7 @@
   bottom: 0px;
   left: 20%;
   width: 60%;
-  height: 70px;
+  height: 0;
   div {
     border-top: solid 1px silver;
   }
@@ -42,7 +42,7 @@
 }
 .leftSide {
   border-left: 1px solid #ddd;
-  height: 80vw;
+  height: 64vw;
   margin-left: 62%;
 
   .searchSection {
