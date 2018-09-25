@@ -92,7 +92,7 @@
 }
 .leftSide ._ProductList ._ItemsDesc div h1 {
   position: relative;
-  top: -160px;
+  top: -170px;
   left: 15%;
   margin: 0 0 0 40px;
   font-size: 1.5em;
@@ -102,7 +102,7 @@
 .leftSide ._ProductList ._ItemsDesc div p {
   position: relative;
   left: 2%;
-  top: -160px;
+  top: -170px;
   margin-left: 20%;
   text-align: justify;
   text-align-last: left;
@@ -110,7 +110,7 @@
 .leftSide ._ProductList ._ItemsDesc div button {
   position: relative;
   left: 22%;
-  top: -160px;
+  top: -170px;
 }
 
 .ProductCart {
