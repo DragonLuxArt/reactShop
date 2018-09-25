@@ -1,6 +1,7 @@
 .App {
+  position: relative;
   text-align: center;
-  min-height: 100%;
+  max-height: 100%;
   max-width: 100vw;
 }
 ._Header {
@@ -25,82 +26,122 @@
 }
 
 ._Footer {
-  display: flex;
-  justify-content: center;
+  position: absolute;
+  bottom: 0px;
+  left: 20%;
+  width: 60%;
+  height: 70px;
   div {
     border-top: solid 1px silver;
-    width: 60%;
-    height: 70px;
   }
 }
 
 ._MainPage {
   max-width: 100%;
-  height: auto;
+  min-height: 68vw;
 }
-.searchSection {
-  margin-left: 18.2%;
-  ._Search {
-    ._searchInput {
-      display: flex;
-      margin: 50px 0 0 38px;
-      width: 550px;
-      padding: 15px;
-      font-size: 22px;
+.leftSide {
+  border-left: 1px solid #ddd;
+  height: 80vw;
+  margin-left: 62%;
+
+  .searchSection {
+    position: relative;
+    right: 112%;
+    padding-bottom: 6%;
+    border-bottom: 1px solid #ddd;
+    width: 108%;
+    ._Search {
+      padding: 0;
+      ._searchInput {
+        display: flex;
+        margin: 50px 0 0 0px;
+        width: 550px;
+        padding: 15px;
+        font-size: 22px;
+        size: 550px;
+      }
+      ._searchInput::placeholder {
+        font-size: 22px;
+      }
     }
-    ._searchInput::placeholder {
-      font-size: 22px;
+  }
+
+  ._ProductList {
+    position: absolute;
+    max-width: 700px;
+    left: 20%;
+    margin: 0 0 200px 0;
+    padding: 0;
+    text-align: justify;
+    text-align-last: left;
+    padding-right: 6%;
+    ._ItemsDesc {
+      display: block;
+      img {
+        margin-top: 40px;
+        max-width: 100%;
+        height: auto;
+      }
+      div {
+        position: absolute;
+        left: 10%;
+        height: 0;
+        width: 220%;
+        h1 {
+          position: relative;
+          top: -160px;
+          left: 15%;
+          margin: 0 0 0 40px;
+          font-size: 1.5em;
+          text-align: justify;
+          text-align-last: left;
+        }
+        p {
+          position: relative;
+          left: 2%;
+          top: -160px;
+          margin-left: 20%;
+          text-align: justify;
+          text-align-last: left;
+        }
+        button {
+          position: relative;
+          left: 22%;
+          top: -160px;
+        }
+      }
     }
   }
 }
-
-._ProductList {
-  position: absolute;
-  div {
-    display: block;
-    margin-left: 10px;
-    img {
-      position: absolute;
-      left: 42%;
-      margin-top: 40px;
-      max-width: 100%;
-      height: auto;
-    }
-    h1 {
-      position:relative;
-      top: 60px;
-      left: 12%;
-      margin: 60px 0 0 140px;
-      font-size: 1.5em;
-    }
-    p {
-      position: relative;
-      left:-20%;
-      top:50px;
-      margin-left: 80%;
-    }
-    button {
-      position: relative;
-      margin-left: 40%;
-      margin-top: 5%;
-    }
-  }
-}
-
 .ProductCart {
-  margin-left: 40%;
+  position: absolute;
+  top: 10%;
+  left: 63%;
+  width: 20%;
+  text-align: justify;
+  text-align-last: left;
   .CartPage {
     .CartProducts {
+      text-align: justify;
+      text-align-last: left;
       .cartItem {
         button {
-          padding: 0px;
+          position: absolute;
+          text-align: center;
           width: 20px;
           height: 20px;
           border: 1px solid black;
           border-radius: 100%;
           background-color: white;
+          cursor: pointer;
         }
       }
+    }
+    .CartCaption {
+      position: relative;
+      border-top: 1px solid #ddd;
+      max-width: 300px;
     }
   }
 }

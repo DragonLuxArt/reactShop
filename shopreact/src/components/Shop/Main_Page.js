@@ -29,7 +29,7 @@ class MainPage extends Component {
         <img src={product.photo} />
         <div>
           <h1 className="productsTitle">{product.name}</h1>
-          <p>{product.price} zł</p>
+          <p>Cena: {product.price} zł</p>
           <p>{product.description}</p>
           <button
             onClick={() => this.addtoCart(product)}
@@ -48,7 +48,8 @@ class MainPage extends Component {
       <div className="cartItem">
         <p>
           <button onClick={() => this.deleteFromCart(product)}> x </button>
-          {product.id} - {product.name} - {product.price}zł
+          {product.id} - {product.name} - {product.price}
+          zł
         </p>
       </div>
     ));
@@ -80,28 +81,30 @@ class MainPage extends Component {
   };
 
   sumCartItems = () => {
-     return _.sumBy(this.state.cart, e => e.price);
+    return _.sumBy(this.state.cart, e => e.price);
   };
 
   render() {
     const { products, textSearch } = this.state;
     return (
       <div className="_MainPage">
-        <section className="searchSection">
-          <div className="_Search">
-            <input
-              className="_searchInput"
-              name="textSearch"
-              value={textSearch}
-              placeholder="Szukaj..."
-              onChange={e => this.onChanges("textSearch", e.target.value)}
-            />
-          </div>
-        </section>
+        <div className="leftSide">
+          <section className="searchSection">
+            <div className="_Search">
+              <input
+                className="_searchInput"
+                name="textSearch"
+                value={textSearch}
+                placeholder="Szukaj..."
+                onChange={e => this.onChanges("textSearch", e.target.value)}
+              />
+            </div>
+          </section>
 
-        <section className="_ProductList">
-          {this._productsRender(products, textSearch)}
-        </section>
+          <section className="_ProductList">
+            {this._productsRender(products, textSearch)}
+          </section>
+        </div>
 
         <section className="ProductCart">
           <div className="CartPage">
@@ -110,9 +113,7 @@ class MainPage extends Component {
             </div>
             <div className="CartProducts">{this._cartRender()}</div>
             <div className="CartCaption">
-              <p>
-                Podsumowanie: {this.sumCartItems()} zł
-              </p>
+              <p>Podsumowanie: {this.sumCartItems()} zł</p>
             </div>
           </div>
         </section>
