@@ -141,4 +141,39 @@
   max-width: 300px;
 }
 
+@media only screen and (min-width: 1600px) {
+  .leftSide {
+    height: 56vw;
+    margin-left: 62%;
+  }
+
+  ._Footer {
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+    width: 60%;
+    height: 15%;
+  }
+  ._Footer div {
+    border-top: solid 1px silver;
+  }
+}
+@media only screen and (min-width: 1980px) {
+  .leftSide {
+    height: 44vw;
+    margin-left: 62%;
+  }
+
+  ._Footer {
+    position: absolute;
+    bottom: 0px;
+    left: 20%;
+    width: 60%;
+    height: 28%;
+  }
+  ._Footer div {
+    border-top: solid 1px silver;
+  }
+}
+
 /*# sourceMappingURL=output.css.map */
