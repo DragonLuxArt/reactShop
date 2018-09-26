@@ -163,9 +163,9 @@
   }
 }
 
-@media only screen and(min-width: 1980px){
+@media only screen and(min-height: 1100px) {
   .leftSide {
-    height: 44vw;
+    height: 46vw;
     margin-left: 62%;
   }
   ._Footer {
@@ -173,7 +173,7 @@
     bottom: 0px;
     left: 20%;
     width: 60%;
-    height: 28%;
+    height: 25%;
     div {
       border-top: solid 1px silver;
     }
