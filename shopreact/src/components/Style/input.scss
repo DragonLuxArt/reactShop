@@ -138,12 +138,14 @@
         }
       }
     }
-    .CartCaption {
-      position: relative;
-      border-top: 1px solid #ddd;
-      max-width: 300px;
-    }
   }
+}
+.CartCaption {
+  position: relative;
+  border-top: 1px solid #ddd;
+  max-width: 300px;
+  left: 1450px;
+  bottom: 1210px;
 }
 
 @media only screen and(min-height: 1100px) {
