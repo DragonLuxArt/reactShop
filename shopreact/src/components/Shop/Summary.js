@@ -4,6 +4,7 @@ import { sumBy } from "lodash";
 
 class Summary extends Component {
   sumCartItems = () => {
+    debugger
     return sumBy(this.props.cartProducts, e => e.price);
   };
 
